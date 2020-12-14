@@ -1,0 +1,305 @@
+{
+  "Uuid": "2571ebd9-a519-472e-b57c-9e12a6faef7d",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "web3test-ForTheo",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\r\n# INPUTS\r\ncontract_address = IN[0]\r\nwallet_private_key = IN[1]\r\nwallet_address = IN[2]\r\ninfura_url = IN[3]\r\npath = IN[4]\r\nmessage = IN[5]\r\nnumber = IN[6]\r\nimport time\r\nimport sys\r\nsys.path.append(path)\r\nfrom web3 import Web3, HTTPProvider\r\n\r\nw3 = Web3(HTTPProvider(infura_url))\r\n\r\n\r\ncontract_abi = \"[{\\\"anonymous\\\":false,\\\"inputs\\\":[{\\\"indexed\\\":true,\\\"internalType\\\":\\\"address\\\",\\\"name\\\":\\\"previousOwner\\\",\\\"type\\\":\\\"address\\\"},{\\\"indexed\\\":true,\\\"internalType\\\":\\\"address\\\",\\\"name\\\":\\\"newOwner\\\",\\\"type\\\":\\\"address\\\"}],\\\"name\\\":\\\"OwnershipTransferred\\\",\\\"type\\\":\\\"event\\\"},{\\\"inputs\\\":[],\\\"name\\\":\\\"renounceOwnership\\\",\\\"outputs\\\":[],\\\"stateMutability\\\":\\\"nonpayable\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[{\\\"internalType\\\":\\\"string\\\",\\\"name\\\":\\\"_IPFSHash\\\",\\\"type\\\":\\\"string\\\"}],\\\"name\\\":\\\"setIPFSHash\\\",\\\"outputs\\\":[],\\\"stateMutability\\\":\\\"payable\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[{\\\"internalType\\\":\\\"uint256\\\",\\\"name\\\":\\\"_myUint\\\",\\\"type\\\":\\\"uint256\\\"}],\\\"name\\\":\\\"setMyUint\\\",\\\"outputs\\\":[],\\\"stateMutability\\\":\\\"payable\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[{\\\"internalType\\\":\\\"address\\\",\\\"name\\\":\\\"newOwner\\\",\\\"type\\\":\\\"address\\\"}],\\\"name\\\":\\\"transferOwnership\\\",\\\"outputs\\\":[],\\\"stateMutability\\\":\\\"nonpayable\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[],\\\"name\\\":\\\"IPFSHash\\\",\\\"outputs\\\":[{\\\"internalType\\\":\\\"string\\\",\\\"name\\\":\\\"\\\",\\\"type\\\":\\\"string\\\"}],\\\"stateMutability\\\":\\\"view\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[],\\\"name\\\":\\\"myUint\\\",\\\"outputs\\\":[{\\\"internalType\\\":\\\"uint256\\\",\\\"name\\\":\\\"\\\",\\\"type\\\":\\\"uint256\\\"}],\\\"stateMutability\\\":\\\"view\\\",\\\"type\\\":\\\"function\\\"},{\\\"inputs\\\":[],\\\"name\\\":\\\"owner\\\",\\\"outputs\\\":[{\\\"internalType\\\":\\\"address\\\",\\\"name\\\":\\\"\\\",\\\"type\\\":\\\"address\\\"}],\\\"stateMutability\\\":\\\"view\\\",\\\"type\\\":\\\"function\\\"}]\"\r\n\r\n\r\nsmartContract = w3.eth.contract(address=contract_address, abi=contract_abi)\r\n\r\n\r\n\r\nreceipts = []\r\nnonce = w3.eth.getTransactionCount(wallet_address)\r\ntx_dict = smartContract.functions.setIPFSHash(message).buildTransaction({\r\n    'chainId' : 3,\r\n    'gas' : 210000,\r\n    'gasPrice' : w3.toWei('50', 'gwei'),\r\n    'nonce' : nonce,\r\n})\r\n\r\nsigned_tx = w3.eth.account.sign_transaction(tx_dict, wallet_private_key)\r\ntx_hash = w3.eth.sendRawTransaction(signed_tx.rawTransaction)\r\ntx_receipt = w3.eth.waitForTransactionReceipt(tx_hash, timeout=120, poll_latency=0.1)\r\nreceipts.append(tx_receipt)\r\n\r\nnonce = w3.eth.getTransactionCount(wallet_address)\r\ntx_dict = smartContract.functions.setMyUint(number).buildTransaction({\r\n    'chainId' : 3,\r\n    'gas' : 210000,\r\n    'gasPrice' : w3.toWei('50', 'gwei'),\r\n    'nonce' : nonce,\r\n})\r\nsigned_tx = w3.eth.account.sign_transaction(tx_dict, wallet_private_key)\r\ntx_hash = w3.eth.sendRawTransaction(signed_tx.rawTransaction)\r\ntx_receipt = w3.eth.waitForTransactionReceipt(tx_hash, timeout=120, poll_latency=0.1)\r\n\r\nreceipts.append(tx_receipt)\r\n\r\n\r\n\r\noutputList = []\r\nfor tx_receipt in receipts:\r\n    receipt = []\r\n    receipt.append('blockHash: '+str(tx_receipt['blockHash']))\r\n    receipt.append('blockNumber: '+str(tx_receipt['blockNumber']))\r\n    receipt.append('contractAddress: '+str(tx_receipt['contractAddress']))\r\n    receipt.append('cumulativeGasUsed: '+str(tx_receipt['cumulativeGasUsed']))\r\n    receipt.append('from: '+str(tx_receipt['from']))\r\n    receipt.append('gasUsed: '+str(tx_receipt['gasUsed']))\r\n    receipt.append('logs: '+str(tx_receipt['logs']))\r\n    receipt.append('to: '+str(tx_receipt['to']))\r\n    receipt.append('transactionHash: '+str(tx_receipt['transactionHash']))\r\n    receipt.append('tansactionIndex: '+str(tx_receipt['transactionIndex']))\r\n    outputList.append(receipt)\r\nOUT = outputList",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "4e9e30e8b2c84bb59418a38c9f72a276",
+      "Inputs": [
+        {
+          "Id": "e79be4ef1b81457abc6e3cecbea37129",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "17d4da2fafaf4a45a45803404b0446bd",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4403af32635d48279467af90a8fc7a45",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5085e2206e694b5eb3f031598f35d257",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c3e80799fdc34902b5a4cb61fca2eec5",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b3a56444410e417ba1c605f19e749f3d",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c537fd7f5a304b029a69a4430799b3d1",
+          "Name": "IN[6]",
+          "Description": "Input #6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1290541f28474d9983ef74ccbf946d37",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "contract_addres = \"0xb80206789De27D14b3f458Bed9072d4a0129b41e\";\nwallet_private_key = \"XXXXXXXXXXXXXXXXX\";\nwallet_address = \"XXXXXXXXXXXXXXXXX\";\ninfura_url = \"https://ropsten.infura.io/XXXXXXXXXXXXX\";\npath = \"C:\\\\Users\\\\XXXXX\\\\anaconda3\\\\envs\\\\dynamo383\\\\lib\\\\site-packages\";\nmessage = \"Type Your Message Here\";\nnumber = 98765;",
+      "Id": "c6dcbd9159654a23823c8ac632c65ca8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d60aba26c8dd4881be16f11a6a1ffdcf",
+          "Name": "",
+          "Description": "contract_addres",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8510975b903c4ad8b2262e0d87ae8ea1",
+          "Name": "",
+          "Description": "wallet_private_key",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "38a2a51a895f47dd8e28d5b2f53ffc37",
+          "Name": "",
+          "Description": "wallet_address",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "388ccccfacc54b58bd0875f71fc08eab",
+          "Name": "",
+          "Description": "infura_url",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "592fd614349341649f8328da52bc5194",
+          "Name": "",
+          "Description": "path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6eddbbf8358e4204bcdb4b82d6cb83a5",
+          "Name": "",
+          "Description": "message",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3512b135739f4b91b57edcd602b88b0b",
+          "Name": "",
+          "Description": "number",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "13e0bcd045ea43158f97cc8afd3cb41b",
+      "Inputs": [
+        {
+          "Id": "b133b4077ae64d80be01b92244f1f578",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d9320b58c64f4a2dbb9f0e5372ac4ab9",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "1290541f28474d9983ef74ccbf946d37",
+      "End": "b133b4077ae64d80be01b92244f1f578",
+      "Id": "bf1ac4694d0d4d1aa442ee77a2975d58"
+    },
+    {
+      "Start": "d60aba26c8dd4881be16f11a6a1ffdcf",
+      "End": "e79be4ef1b81457abc6e3cecbea37129",
+      "Id": "9431254f12b14054b2a3b7728e30e6fc"
+    },
+    {
+      "Start": "8510975b903c4ad8b2262e0d87ae8ea1",
+      "End": "17d4da2fafaf4a45a45803404b0446bd",
+      "Id": "05d819641d574f4cb1bac8ee29987b53"
+    },
+    {
+      "Start": "38a2a51a895f47dd8e28d5b2f53ffc37",
+      "End": "4403af32635d48279467af90a8fc7a45",
+      "Id": "4e7bb6dbc62c441a9b4e874f73d2c230"
+    },
+    {
+      "Start": "388ccccfacc54b58bd0875f71fc08eab",
+      "End": "5085e2206e694b5eb3f031598f35d257",
+      "Id": "3fe9d952bad34f7c8625bbd87199318e"
+    },
+    {
+      "Start": "592fd614349341649f8328da52bc5194",
+      "End": "c3e80799fdc34902b5a4cb61fca2eec5",
+      "Id": "94750e5e83ec44e7a7270def23a93735"
+    },
+    {
+      "Start": "6eddbbf8358e4204bcdb4b82d6cb83a5",
+      "End": "b3a56444410e417ba1c605f19e749f3d",
+      "Id": "d7f636431e5f42c7b288862242652638"
+    },
+    {
+      "Start": "3512b135739f4b91b57edcd602b88b0b",
+      "End": "c537fd7f5a304b029a69a4430799b3d1",
+      "Id": "e5a37445593e46d38db8bf0ae0defff2"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.8.0.2471",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "4e9e30e8b2c84bb59418a38c9f72a276",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 942.66666666666652,
+        "Y": 100.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c6dcbd9159654a23823c8ac632c65ca8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 152.49851269306697,
+        "Y": -7.1042803738671836
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "13e0bcd045ea43158f97cc8afd3cb41b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1205.1779709734394,
+        "Y": 102.44618702983922
+      }
+    ],
+    "Annotations": [],
+    "X": -79.897689534815072,
+    "Y": 28.146259110797246,
+    "Zoom": 1.1246950572958567
+  }
+}

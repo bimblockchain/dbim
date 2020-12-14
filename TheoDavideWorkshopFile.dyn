@@ -1,0 +1,2285 @@
+{
+  "Uuid": "a27ecad8-93d1-4ea5-bfb8-34e148e65b6f",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "TheoDavideWorkshopFile",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Cuboid.ByLengths@double,double,double",
+      "Id": "298c494bca8c4646b0034f9f24b74ef1",
+      "Inputs": [
+        {
+          "Id": "3c72f7a992c94083a23b778637bb117c",
+          "Name": "width",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6570970f2d194dbfb527fdb666e7d8d0",
+          "Name": "length",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a0951baf5624b6fb8ea809b9b3c53b8",
+          "Name": "height",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "432eca2e31444c958e010bd4085d48de",
+          "Name": "Cuboid",
+          "Description": "Cuboid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Cuboid centered at WCS origin, with width, length, and height.\n\nCuboid.ByLengths (width: double = 1, length: double = 1, height: double = 1): Cuboid"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "10;",
+      "Id": "303563e1162c4b5cb57a881a6a38628a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f245fec15dad4ce0ac9a2fea65a45dae",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Translate@double,double,double",
+      "Id": "34a126fc69f9493c8315e68b955d1480",
+      "Inputs": [
+        {
+          "Id": "e63a3c5894bd49db9a794ee38ef69957",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "940796ab203d4537b8db0cfa9733d603",
+          "Name": "xTranslation",
+          "Description": "Displacement along X-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ae0c128d26e42bcb6c97b9e72bc93e7",
+          "Name": "yTranslation",
+          "Description": "Displacement along Y-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10854500d2e44482a6e20c0ff1ac6a7f",
+          "Name": "zTranslation",
+          "Description": "Displacement along Z-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bb8ea24acd164161bac712cd7f97c07c",
+          "Name": "Geometry",
+          "Description": "Transformed Geometry.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "CrossProduct",
+      "Description": "Translates any given geometry by the given displacements in the x, y, and z directions defined in WCS respectively.\n\nGeometry.Translate (xTranslation: double = 0, yTranslation: double = 0, zTranslation: double = 0): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..20..10;",
+      "Id": "bf39dff017814cfa9a07a7f91adc9e70",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "945e685b34d04fc9873cdcddffcca666",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "c6acac1c04bd4181a77a6df141adea04",
+      "Inputs": [
+        {
+          "Id": "1094c4530ce9426e82ff05a666aa2f42",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "25328d3a7c2c44f2b6d9fb38e04bcead",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c2991509a504f2fbcf24fc0bba6efbf",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.ByGeometry@Autodesk.DesignScript.Geometry.Geometry,double",
+      "Id": "d7dbaf7fc21748ac80418fd7e83395c5",
+      "Inputs": [
+        {
+          "Id": "e873885aaafa4aaa983de0440f63d85b",
+          "Name": "geometry",
+          "Description": "A geometry\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c69ec797c288430ea263faea2d040128",
+          "Name": "tolerance",
+          "Description": "A positive tolerance value\n\ndouble\nDefault value : 0.0001",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f5a28c67174143c8a9154936c7b80423",
+          "Name": "Topology",
+          "Description": "The created Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Topology by geometry.\n\nTopology.ByGeometry (geometry: Geometry, tolerance: double = 0.0001): Topology"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Centroid",
+      "Id": "919e3ea85d84435499ee6e0970a0358b",
+      "Inputs": [
+        {
+          "Id": "2d7e8480de014b34b64ff3f5ad58dc1d",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f950a7c8125240bc84c8d808034966c4",
+          "Name": "Vertex",
+          "Description": "The centroid of the given Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the centroid of any Topology.\n\nTopology.Centroid: Vertex"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DesignScript.Builtin.Dictionary.ByKeysValues@string[],var[]..[]",
+      "Id": "532c9ad3954745c0b1a960626f01d8d3",
+      "Inputs": [
+        {
+          "Id": "64780d48bf094874842bae7529a94c12",
+          "Name": "keys",
+          "Description": "The string keys of the Dictionary\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8221b4148c1e4eb8a4afaf57a173953e",
+          "Name": "values",
+          "Description": "The values of the Dictionary\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "08f8a514ae424b6da2430ee7298c12b4",
+          "Name": "dictionary",
+          "Description": "The result Dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Longest",
+      "Description": "Produces a Dictionary with the supplied keys and values. The number of entries is the shorter of keys or values.\n\nDictionary.ByKeysValues (keys: string[], values: var[]..[]): Dictionary"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"tokenID\";\n0..(count-1);",
+      "Id": "e81f2f01066b4ac982550af4aa57cbd3",
+      "Inputs": [
+        {
+          "Id": "2e8d6823165a443dbe032aee7166a52d",
+          "Name": "count",
+          "Description": "count",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4c9b91f4a9f9466faefcd26f5c3637af",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d07f2d53090e4afe933505eb54e84791",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "61b142b6c0454b75ae455892e8335f22",
+      "Inputs": [
+        {
+          "Id": "105706544a834a829b49c66fbf9e726c",
+          "Name": "list",
+          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "169618574dfd46c9bc8565d514dc4fe4",
+          "Name": "count",
+          "Description": "List length.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.CellComplex.ByCells@Topologic.Cell[]",
+      "Id": "244d330652ac40f6a5f9a9a054d7f626",
+      "Inputs": [
+        {
+          "Id": "46f7d2e0cbb44cc1b9e035e7d885943c",
+          "Name": "cells",
+          "Description": "A set of Cells\n\nCell[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4dd60b45c91f47298e07c5fdaaba43c2",
+          "Name": "CellComplex",
+          "Description": "The created CellComplex",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a CellComplex by a set of Cells.\n\nCellComplex.ByCells (cells: Cell[]): CellComplex"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.SetDictionaries@Topologic.Vertex[],var[]..[],int",
+      "Id": "0f3d7597bea94244a4c2cd3144c0c9fd",
+      "Inputs": [
+        {
+          "Id": "48a2b88dd2334a5c886b08051369339d",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f32de47520e142b0923ea79fd0ead5e4",
+          "Name": "selectors",
+          "Description": "Vertex[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "127359f18c284c8492ae666d49384bb2",
+          "Name": "dictionaries",
+          "Description": "A list of dictionaries\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06cae6fe9fb847b69a49bc3501db7d93",
+          "Name": "typeFilter",
+          "Description": "int\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "612b78e5993449b49060aa5927aeeb62",
+          "Name": "Topology",
+          "Description": "The Topology with the dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets a list of dictionaries for a Topology.\n\nTopology.SetDictionaries (selectors: Vertex[], dictionaries: var[]..[], typeFilter: int = 255): Topology"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Cell.Type",
+      "Id": "4ca7d729e0304554b3285642105b0e80",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e8d962df29ec4405a68c4bb33af9893d",
+          "Name": "int",
+          "Description": "The type associated to Cell",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the type associated to Cell.\n\nCell.Type ( ): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Cells",
+      "Id": "923ee9f340fa483ca2895ea769821d98",
+      "Inputs": [
+        {
+          "Id": "004aac2d17764ea5b4339c8b5a8b817b",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "393f1e2ea1184b61be02fa3b59b51f0a",
+          "Name": "Cell[]",
+          "Description": "A list of Cells constituent to the Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the Cells constituent to the Topology.\n\nTopology.Cells: Cell[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Dictionary",
+      "Id": "ef0aab251cb74636a51884ac06c40977",
+      "Inputs": [
+        {
+          "Id": "b53ca9555bb44b328cd773175d370a97",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4d16cde4036f47f0975b93ad26514662",
+          "Name": "Dictionary",
+          "Description": "The dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the dictionary of a Topology.\n\nTopology.Dictionary: var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Edges",
+      "Id": "d659d4afb24c44d7a87ffccf9808e778",
+      "Inputs": [
+        {
+          "Id": "fbc5de76162f40b4b2c865cdafeb4a98",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "503b6fd5d90c446195ddcbdef6e297e4",
+          "Name": "Edge[]",
+          "Description": "A list of Edges constituent to the Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the Edges constituent to the Topology.\n\nTopology.Edges: Edge[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "20f6eee670f240819a49dd0da869f295",
+      "Inputs": [
+        {
+          "Id": "38ff440b10344f1c945e528db415d386",
+          "Name": "list",
+          "Description": "List to get the item count of.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "db6d6bfc675243909e765440eb059729",
+          "Name": "count",
+          "Description": "List length.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"tokenID\";\n20..(count+19);",
+      "Id": "a0add83f424148fe83f186530ad37454",
+      "Inputs": [
+        {
+          "Id": "c5536d3e2f2647ed803da5d0c0bc0b8f",
+          "Name": "count",
+          "Description": "count",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0df98d6243c748a182fe16b736b9b8cc",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc3c1341f41d4e61ba739d78bf65f4a0",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DesignScript.Builtin.Dictionary.ByKeysValues@string[],var[]..[]",
+      "Id": "4818a904a19f4fe5ab43b9805368335c",
+      "Inputs": [
+        {
+          "Id": "2892a47e747b40649c690283f38c115a",
+          "Name": "keys",
+          "Description": "The string keys of the Dictionary\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09b91f540f874b80a4b0a4640cede730",
+          "Name": "values",
+          "Description": "The values of the Dictionary\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "38fdbe2a7044454689788bb07ef2ddb1",
+          "Name": "dictionary",
+          "Description": "The result Dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Longest",
+      "Description": "Produces a Dictionary with the supplied keys and values. The number of entries is the shorter of keys or values.\n\nDictionary.ByKeysValues (keys: string[], values: var[]..[]): Dictionary"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "*@var[]..[],var[]..[]",
+      "Id": "d73a86ed8e1e4d5f98ede13184b99dcb",
+      "Inputs": [
+        {
+          "Id": "21ad139b5a6d405fb9ca3961d758bbce",
+          "Name": "x",
+          "Description": "x value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea8f7a8460a642e68a9e7ed72e4f17e4",
+          "Name": "y",
+          "Description": "y value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a2690cc9e0f7473594201e5def437116",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Multiplies x by y.\n\n* (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "10;",
+      "Id": "e5a70b3a7fe74ebba11ca5aa6b3d63c6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7b07645cdb604f3d95e878fb06d4ec34",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Centroid",
+      "Id": "374c67f259d64958a4a07f6a4244efb9",
+      "Inputs": [
+        {
+          "Id": "baec5527519d494c871efb792f1f1574",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c7cf4ffeae334cfa842f3ade44aac248",
+          "Name": "Vertex",
+          "Description": "The centroid of the given Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the centroid of any Topology.\n\nTopology.Centroid: Vertex"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.SetDictionaries@Topologic.Vertex[],var[]..[],int",
+      "Id": "0fe85ed10157451aa8963b8fe2f7cc68",
+      "Inputs": [
+        {
+          "Id": "5b39f1e08e1d451aab01420bf144baa8",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "58ba00784dca40a1a794c5b3545696eb",
+          "Name": "selectors",
+          "Description": "Vertex[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1272087b86644195bb876409f3cade92",
+          "Name": "dictionaries",
+          "Description": "A list of dictionaries\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b6861abfadb54c97a168b20b1b43a92c",
+          "Name": "typeFilter",
+          "Description": "int\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26f60c66cfbc4ff3bc9187eb0857107b",
+          "Name": "Topology",
+          "Description": "The Topology with the dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets a list of dictionaries for a Topology.\n\nTopology.SetDictionaries (selectors: Vertex[], dictionaries: var[]..[], typeFilter: int = 255): Topology"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Edge.Type",
+      "Id": "8f7c752c688d43f49d7872c6da1ba904",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ae304187e7d946cfa8519709543aade1",
+          "Name": "int",
+          "Description": "The type associated to Edge",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the type associated to Edge.\n\nEdge.Type ( ): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Edges",
+      "Id": "52a4062ecdfa455480d3c5d30d52c87e",
+      "Inputs": [
+        {
+          "Id": "f1a9753c45024100a36df40b9bc48f56",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ac6b27ad086e4727a8beef4f6f7b6e78",
+          "Name": "Edge[]",
+          "Description": "A list of Edges constituent to the Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the Edges constituent to the Topology.\n\nTopology.Edges: Edge[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Dictionary",
+      "Id": "3032ced48f434c92b966584cd808ebdf",
+      "Inputs": [
+        {
+          "Id": "b8aeb8b437f14a138dbbfa7980b022d6",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd0e077a13994f7da85d256887ca5b60",
+          "Name": "Dictionary",
+          "Description": "The dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the dictionary of a Topology.\n\nTopology.Dictionary: var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "c[0];",
+      "Id": "fb646db07f41417abeb47731206908b1",
+      "Inputs": [
+        {
+          "Id": "2337df9f18de4c37946f0250c3bcfb37",
+          "Name": "c",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c780ca408ca5451f98cd65f2e36352f4",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Edges",
+      "Id": "983f00d67e9343b38d7269468d194c3f",
+      "Inputs": [
+        {
+          "Id": "f658bd78f8b54432a977eca7a013d1a7",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "17def5d43d47451e9a7a2cadd5d0c4fb",
+          "Name": "Edge[]",
+          "Description": "A list of Edges constituent to the Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the Edges constituent to the Topology.\n\nTopology.Edges: Edge[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Dictionary",
+      "Id": "a866f8277d9b483587e12d44b8cdcae8",
+      "Inputs": [
+        {
+          "Id": "177dbf3fa9204a11815b0eca9714fbe7",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5b8dfce33dca4db291467ebe2aba045e",
+          "Name": "Dictionary",
+          "Description": "The dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the dictionary of a Topology.\n\nTopology.Dictionary: var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DesignScript.Builtin.Dictionary.ValueAtKey@string",
+      "Id": "0798af877178451cb7e3c5c406fd1479",
+      "Inputs": [
+        {
+          "Id": "dd596163d966489da3a2a36361decf5f",
+          "Name": "dictionary",
+          "Description": "DesignScript.Builtin.Dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e144d7381bea45689d26f4eeba6d47fb",
+          "Name": "key",
+          "Description": "The key in the Dictionary to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8c8273e7733c45fd99ddb553bd6f6346",
+          "Name": "value",
+          "Description": "The value at the specified key or null if it is not set.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtain the value at a specified key\n\nDictionary.ValueAtKey (key: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"tokenID\";",
+      "Id": "411b5d9c567b41689c23a0123b86b3ea",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "baad295f7a2f4dc794ee866886978e1e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "==@var[]..[],var[]..[]",
+      "Id": "72d58cf0d745451e89000aacb04e37db",
+      "Inputs": [
+        {
+          "Id": "dc7e619b751e41c59cc1f0efce0e6609",
+          "Name": "x",
+          "Description": "x value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5feb9628821d4ab7b5ed3578bb885bfd",
+          "Name": "y",
+          "Description": "y value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "71715554cbb14899959dbc2a281db6fe",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "330;",
+      "Id": "811b30da3e5d44b384d712c25e0a93f3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3ecf49e97da14b7686352b485032e190",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "b639a3320a2b462bbd6951f9ec55e9b5",
+      "Inputs": [
+        {
+          "Id": "fcb89ad0d3584bea883f0ca7aba0dfc6",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9750fa29bae9415098d67d19975c8c39",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9ed28efd4d1e410fb28d7df60f66d678",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "214dc47aa5ff40369bf3c5698b84fca0",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "eb647a51b1d44df294a3134c45acb712",
+      "Inputs": [
+        {
+          "Id": "d477b1a1777741248e6106a16a77dd72",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e016f609f6ce428a9789ae6d034e10c3",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Geometry",
+      "Id": "224968c9a2c74e73ab185646463e3ece",
+      "Inputs": [
+        {
+          "Id": "c56ab032a36c401096302d7abe94b431",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ea606f1c25b44064b6a46dc63a2041b0",
+          "Name": "var[]..[]",
+          "Description": "The created geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a geometry from Topology.\n\nTopology.Geometry: var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.Translate@double,double,double",
+      "Id": "34c5350b7ed942e29d4c36d8ad0dc9d2",
+      "Inputs": [
+        {
+          "Id": "8878c6e8915b4666885d3730881b5b63",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0a171e62fee6465db568386866b14c70",
+          "Name": "xTranslation",
+          "Description": "Displacement along X-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73eeb9fbc2b94e4a8350e09cac46e950",
+          "Name": "yTranslation",
+          "Description": "Displacement along Y-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4221499005ed4404be09546cf8be328a",
+          "Name": "zTranslation",
+          "Description": "Displacement along Z-axis.\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39002e9f08f14d7588e131ed877b5900",
+          "Name": "Geometry",
+          "Description": "Transformed Geometry.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Translates any given geometry by the given displacements in the x, y, and z directions defined in WCS respectively.\n\nGeometry.Translate (xTranslation: double = 0, yTranslation: double = 0, zTranslation: double = 0): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-0.5;",
+      "Id": "e0c64071bffe4adc9aa86f4e2a8c3f6a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "beae81562a6440caa25c79f155adfe89",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"tokenID\";",
+      "Id": "4ed5870aaa3e47a099b02afd7a76e3b0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "021baa8b746b4c7da256ae749b30397d",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DesignScript.Builtin.Dictionary.ValueAtKey@string",
+      "Id": "b83dd019651347369ba97cf61c4f86dd",
+      "Inputs": [
+        {
+          "Id": "e716bb5cbe23415981c74dc595c8534c",
+          "Name": "dictionary",
+          "Description": "DesignScript.Builtin.Dictionary",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47927f16d8714c6eb2a1fee962384763",
+          "Name": "key",
+          "Description": "The key in the Dictionary to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d0324a578d74408ea9e2999f6a2ebe97",
+          "Name": "value",
+          "Description": "The value at the specified key or null if it is not set.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtain the value at a specified key\n\nDictionary.ValueAtKey (key: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "==@var[]..[],var[]..[]",
+      "Id": "5c2fa97dea3549fdafef081ac140888e",
+      "Inputs": [
+        {
+          "Id": "4865b4719b82492980f591ebbb23aa08",
+          "Name": "x",
+          "Description": "x value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c12de24941894b578490b4c7c698d55e",
+          "Name": "y",
+          "Description": "y value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6fe39f07a86549569b8e5f833abc4991",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Equal x to y?\n\n== (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "4d8a5ef910794614bf61957bbbd48bfb",
+      "Inputs": [
+        {
+          "Id": "fd4b42d792cf438d8cadc877158bddf0",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7fbb13187c7442f58eadde31a128b2b4",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1ab8fc40e82c4021af5696ecffa0a80a",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6abe6ceb1e8d442ebc5ebf233f850425",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6def3e54637640ba9ed092190957131c",
+      "Inputs": [
+        {
+          "Id": "2e9d7964639149cb9705cc730ab2c8f7",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4cef6021c1724e9895a388a73a6735d4",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Topologic.Topology.Geometry",
+      "Id": "9d348c0880e14c489a50bcdc209f2ef9",
+      "Inputs": [
+        {
+          "Id": "5231ce79c989467a9c17a48e8f850cfb",
+          "Name": "topology",
+          "Description": "Topologic.Topology",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "906bb17d2a9e4820aa3e5a3c3c97d74c",
+          "Name": "var[]..[]",
+          "Description": "The created geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a geometry from Topology.\n\nTopology.Geometry: var[]..[]"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "432eca2e31444c958e010bd4085d48de",
+      "End": "e63a3c5894bd49db9a794ee38ef69957",
+      "Id": "8982728edac14d55801517e77580e97a"
+    },
+    {
+      "Start": "f245fec15dad4ce0ac9a2fea65a45dae",
+      "End": "3c72f7a992c94083a23b778637bb117c",
+      "Id": "d0de5316308347dfaedcf4317bf0f447"
+    },
+    {
+      "Start": "f245fec15dad4ce0ac9a2fea65a45dae",
+      "End": "6570970f2d194dbfb527fdb666e7d8d0",
+      "Id": "0e131099badf49c6aae32fc5371214ad"
+    },
+    {
+      "Start": "f245fec15dad4ce0ac9a2fea65a45dae",
+      "End": "2a0951baf5624b6fb8ea809b9b3c53b8",
+      "Id": "7341f0afa34845e5a06e6972d58c1bc3"
+    },
+    {
+      "Start": "bb8ea24acd164161bac712cd7f97c07c",
+      "End": "1094c4530ce9426e82ff05a666aa2f42",
+      "Id": "dac0ca37ef6a4c1f85b1288984086561"
+    },
+    {
+      "Start": "945e685b34d04fc9873cdcddffcca666",
+      "End": "940796ab203d4537b8db0cfa9733d603",
+      "Id": "b59e4867c23343ac8f8e384616839d66"
+    },
+    {
+      "Start": "945e685b34d04fc9873cdcddffcca666",
+      "End": "5ae0c128d26e42bcb6c97b9e72bc93e7",
+      "Id": "9a448a385db74bbc9b880cb1750bc971"
+    },
+    {
+      "Start": "1c2991509a504f2fbcf24fc0bba6efbf",
+      "End": "e873885aaafa4aaa983de0440f63d85b",
+      "Id": "e209a0a59a2e4f17b56225ea04a64f87"
+    },
+    {
+      "Start": "f5a28c67174143c8a9154936c7b80423",
+      "End": "2d7e8480de014b34b64ff3f5ad58dc1d",
+      "Id": "68de379d8e4e4217a2dd55025ef3f1f0"
+    },
+    {
+      "Start": "f5a28c67174143c8a9154936c7b80423",
+      "End": "46f7d2e0cbb44cc1b9e035e7d885943c",
+      "Id": "6e41f64e25784851adc9764fbe3d2518"
+    },
+    {
+      "Start": "f950a7c8125240bc84c8d808034966c4",
+      "End": "105706544a834a829b49c66fbf9e726c",
+      "Id": "6e9fb614a1824ae48aa7bba2c148832b"
+    },
+    {
+      "Start": "f950a7c8125240bc84c8d808034966c4",
+      "End": "f32de47520e142b0923ea79fd0ead5e4",
+      "Id": "e98713f24564430b8f50788160dcddd0"
+    },
+    {
+      "Start": "08f8a514ae424b6da2430ee7298c12b4",
+      "End": "127359f18c284c8492ae666d49384bb2",
+      "Id": "11ee29d3644f4e2080dbcf4a9172bb72"
+    },
+    {
+      "Start": "4c9b91f4a9f9466faefcd26f5c3637af",
+      "End": "64780d48bf094874842bae7529a94c12",
+      "Id": "d01c4f4d301c450bbbf2e799499a16a3"
+    },
+    {
+      "Start": "d07f2d53090e4afe933505eb54e84791",
+      "End": "8221b4148c1e4eb8a4afaf57a173953e",
+      "Id": "bd392043fd264314890d6681179f8df2"
+    },
+    {
+      "Start": "169618574dfd46c9bc8565d514dc4fe4",
+      "End": "2e8d6823165a443dbe032aee7166a52d",
+      "Id": "9d6ded23121f4b34bb3a1c320a201e30"
+    },
+    {
+      "Start": "4dd60b45c91f47298e07c5fdaaba43c2",
+      "End": "48a2b88dd2334a5c886b08051369339d",
+      "Id": "aadc255e6b464281a306eb8c48ec58cd"
+    },
+    {
+      "Start": "612b78e5993449b49060aa5927aeeb62",
+      "End": "fbc5de76162f40b4b2c865cdafeb4a98",
+      "Id": "96a8fd9453e4404685a03fe2a086811f"
+    },
+    {
+      "Start": "612b78e5993449b49060aa5927aeeb62",
+      "End": "5b39f1e08e1d451aab01420bf144baa8",
+      "Id": "adcba46042e048e6a32853d4b401b4c7"
+    },
+    {
+      "Start": "e8d962df29ec4405a68c4bb33af9893d",
+      "End": "06cae6fe9fb847b69a49bc3501db7d93",
+      "Id": "53c9775a88b447dcb526de61060d432c"
+    },
+    {
+      "Start": "393f1e2ea1184b61be02fa3b59b51f0a",
+      "End": "b53ca9555bb44b328cd773175d370a97",
+      "Id": "82e1b769789041bba8f642d14b7d6c53"
+    },
+    {
+      "Start": "393f1e2ea1184b61be02fa3b59b51f0a",
+      "End": "2337df9f18de4c37946f0250c3bcfb37",
+      "Id": "eefad2e733e342648b656c0f98627edc"
+    },
+    {
+      "Start": "503b6fd5d90c446195ddcbdef6e297e4",
+      "End": "38ff440b10344f1c945e528db415d386",
+      "Id": "ceff6ad98cfc42c590eba23a1f0d3d98"
+    },
+    {
+      "Start": "503b6fd5d90c446195ddcbdef6e297e4",
+      "End": "baec5527519d494c871efb792f1f1574",
+      "Id": "c7bec0ad687944dcb267a9d666e36dde"
+    },
+    {
+      "Start": "db6d6bfc675243909e765440eb059729",
+      "End": "c5536d3e2f2647ed803da5d0c0bc0b8f",
+      "Id": "a0a63dc8ec574791ae254be3e18fa9fc"
+    },
+    {
+      "Start": "0df98d6243c748a182fe16b736b9b8cc",
+      "End": "2892a47e747b40649c690283f38c115a",
+      "Id": "b66eadeaae7f4258837013e7e87fb3eb"
+    },
+    {
+      "Start": "cc3c1341f41d4e61ba739d78bf65f4a0",
+      "End": "21ad139b5a6d405fb9ca3961d758bbce",
+      "Id": "6b5d08a2f22e4fdfa12c1366aa069d7b"
+    },
+    {
+      "Start": "38fdbe2a7044454689788bb07ef2ddb1",
+      "End": "1272087b86644195bb876409f3cade92",
+      "Id": "fdf4da5487d745d7ac6d2f3739f9cf1b"
+    },
+    {
+      "Start": "a2690cc9e0f7473594201e5def437116",
+      "End": "09b91f540f874b80a4b0a4640cede730",
+      "Id": "aceab56d6456499e862f3b1feb44ad1b"
+    },
+    {
+      "Start": "7b07645cdb604f3d95e878fb06d4ec34",
+      "End": "ea8f7a8460a642e68a9e7ed72e4f17e4",
+      "Id": "ef391b1b3b3740268dce0e956880f0a9"
+    },
+    {
+      "Start": "c7cf4ffeae334cfa842f3ade44aac248",
+      "End": "58ba00784dca40a1a794c5b3545696eb",
+      "Id": "c34d8114ada249629fa82b421b7da7b3"
+    },
+    {
+      "Start": "26f60c66cfbc4ff3bc9187eb0857107b",
+      "End": "004aac2d17764ea5b4339c8b5a8b817b",
+      "Id": "9863d89cd674478f80d1ed62dc606e9e"
+    },
+    {
+      "Start": "26f60c66cfbc4ff3bc9187eb0857107b",
+      "End": "f1a9753c45024100a36df40b9bc48f56",
+      "Id": "7f5fd8ada4744bb89924de3d52a263a9"
+    },
+    {
+      "Start": "ae304187e7d946cfa8519709543aade1",
+      "End": "b6861abfadb54c97a168b20b1b43a92c",
+      "Id": "47779ddd871b48ad9203f3db34ad8cf8"
+    },
+    {
+      "Start": "ac6b27ad086e4727a8beef4f6f7b6e78",
+      "End": "b8aeb8b437f14a138dbbfa7980b022d6",
+      "Id": "751acd266da248ec87b45c6c3d82dfc8"
+    },
+    {
+      "Start": "ac6b27ad086e4727a8beef4f6f7b6e78",
+      "End": "fcb89ad0d3584bea883f0ca7aba0dfc6",
+      "Id": "28abd83f5310450187b878d89fe77d84"
+    },
+    {
+      "Start": "fd0e077a13994f7da85d256887ca5b60",
+      "End": "dd596163d966489da3a2a36361decf5f",
+      "Id": "62ce50166da5453ab1bbb7686a6fe3a1"
+    },
+    {
+      "Start": "c780ca408ca5451f98cd65f2e36352f4",
+      "End": "f658bd78f8b54432a977eca7a013d1a7",
+      "Id": "a571405b231240d0ac2fafacc6f0e91c"
+    },
+    {
+      "Start": "17def5d43d47451e9a7a2cadd5d0c4fb",
+      "End": "177dbf3fa9204a11815b0eca9714fbe7",
+      "Id": "4a57728dcaa14bce82a91de811cfa12f"
+    },
+    {
+      "Start": "17def5d43d47451e9a7a2cadd5d0c4fb",
+      "End": "fd4b42d792cf438d8cadc877158bddf0",
+      "Id": "68bab38a05ac4d9aa1b2d7bcfe7a259b"
+    },
+    {
+      "Start": "5b8dfce33dca4db291467ebe2aba045e",
+      "End": "e716bb5cbe23415981c74dc595c8534c",
+      "Id": "3f0304b77fdc4567b556fc4346baa083"
+    },
+    {
+      "Start": "8c8273e7733c45fd99ddb553bd6f6346",
+      "End": "dc7e619b751e41c59cc1f0efce0e6609",
+      "Id": "0fb821f0056b497b89bfed6c44a75793"
+    },
+    {
+      "Start": "baad295f7a2f4dc794ee866886978e1e",
+      "End": "e144d7381bea45689d26f4eeba6d47fb",
+      "Id": "94919cf714b4483d88e77cef6ad020e9"
+    },
+    {
+      "Start": "71715554cbb14899959dbc2a281db6fe",
+      "End": "9750fa29bae9415098d67d19975c8c39",
+      "Id": "8a4b08be7f2c4a2a928ffa5c6a056355"
+    },
+    {
+      "Start": "3ecf49e97da14b7686352b485032e190",
+      "End": "5feb9628821d4ab7b5ed3578bb885bfd",
+      "Id": "6d889424be644bfca1b110cca518ee3f"
+    },
+    {
+      "Start": "3ecf49e97da14b7686352b485032e190",
+      "End": "c12de24941894b578490b4c7c698d55e",
+      "Id": "e092239ec2bb4f8881e0fffe97de589e"
+    },
+    {
+      "Start": "9ed28efd4d1e410fb28d7df60f66d678",
+      "End": "d477b1a1777741248e6106a16a77dd72",
+      "Id": "c5307ed3bbd84114962951bfd12b2720"
+    },
+    {
+      "Start": "9ed28efd4d1e410fb28d7df60f66d678",
+      "End": "c56ab032a36c401096302d7abe94b431",
+      "Id": "dbf6a9a9d681449eaefa18335b529713"
+    },
+    {
+      "Start": "ea606f1c25b44064b6a46dc63a2041b0",
+      "End": "8878c6e8915b4666885d3730881b5b63",
+      "Id": "cc29a95e37cb408aa04824d741f64da2"
+    },
+    {
+      "Start": "beae81562a6440caa25c79f155adfe89",
+      "End": "4221499005ed4404be09546cf8be328a",
+      "Id": "da5f211bf00544c6b7fed769405234af"
+    },
+    {
+      "Start": "beae81562a6440caa25c79f155adfe89",
+      "End": "73eeb9fbc2b94e4a8350e09cac46e950",
+      "Id": "108f22ff97114066b7b0d641cb6f3943"
+    },
+    {
+      "Start": "beae81562a6440caa25c79f155adfe89",
+      "End": "0a171e62fee6465db568386866b14c70",
+      "Id": "944a933fe058415a9717cc86d152f7ea"
+    },
+    {
+      "Start": "021baa8b746b4c7da256ae749b30397d",
+      "End": "47927f16d8714c6eb2a1fee962384763",
+      "Id": "1f96fee79dd44095beff33e49649c1a4"
+    },
+    {
+      "Start": "d0324a578d74408ea9e2999f6a2ebe97",
+      "End": "4865b4719b82492980f591ebbb23aa08",
+      "Id": "ffa5d8e9f6704a27a4ee7decffdc1459"
+    },
+    {
+      "Start": "6fe39f07a86549569b8e5f833abc4991",
+      "End": "7fbb13187c7442f58eadde31a128b2b4",
+      "Id": "b6f21f46719b4c5fb2bde926506662ec"
+    },
+    {
+      "Start": "1ab8fc40e82c4021af5696ecffa0a80a",
+      "End": "2e9d7964639149cb9705cc730ab2c8f7",
+      "Id": "c63edd2882db4d208a6558717be91761"
+    },
+    {
+      "Start": "1ab8fc40e82c4021af5696ecffa0a80a",
+      "End": "5231ce79c989467a9c17a48e8f850cfb",
+      "Id": "8fec6c56a7fc41f5a8af433f75a1e693"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Topologic",
+      "Version": "1.4.0.1",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "d7dbaf7fc21748ac80418fd7e83395c5",
+        "919e3ea85d84435499ee6e0970a0358b",
+        "244d330652ac40f6a5f9a9a054d7f626",
+        "0f3d7597bea94244a4c2cd3144c0c9fd",
+        "4ca7d729e0304554b3285642105b0e80",
+        "923ee9f340fa483ca2895ea769821d98",
+        "ef0aab251cb74636a51884ac06c40977",
+        "d659d4afb24c44d7a87ffccf9808e778",
+        "374c67f259d64958a4a07f6a4244efb9",
+        "0fe85ed10157451aa8963b8fe2f7cc68",
+        "8f7c752c688d43f49d7872c6da1ba904",
+        "52a4062ecdfa455480d3c5d30d52c87e",
+        "3032ced48f434c92b966584cd808ebdf",
+        "983f00d67e9343b38d7269468d194c3f",
+        "a866f8277d9b483587e12d44b8cdcae8",
+        "224968c9a2c74e73ab185646463e3ece",
+        "9d348c0880e14c489a50bcdc209f2ef9"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.8.0.2471",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -13.705265998840332,
+      "EyeY": 4.4307088851928711,
+      "EyeZ": 42.0754508972168,
+      "LookX": 8.705265998840332,
+      "LookY": -9.4307088851928711,
+      "LookZ": -42.0754508972168,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": false,
+        "Name": "Cuboid.ByLengths",
+        "Id": "298c494bca8c4646b0034f9f24b74ef1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 661.33333333333326,
+        "Y": 623.33333333333326
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "303563e1162c4b5cb57a881a6a38628a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 395.0,
+        "Y": 653.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Geometry.Translate",
+        "Id": "34a126fc69f9493c8315e68b955d1480",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 966.66666666666652,
+        "Y": 827.33333333333326
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "bf39dff017814cfa9a07a7f91adc9e70",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 711.0,
+        "Y": 883.0
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "List.Flatten",
+        "Id": "c6acac1c04bd4181a77a6df141adea04",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1255.3333333333333,
+        "Y": 787.99999999999989
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.ByGeometry",
+        "Id": "d7dbaf7fc21748ac80418fd7e83395c5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1556.6666666666665,
+        "Y": 795.99999999999989
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Centroid",
+        "Id": "919e3ea85d84435499ee6e0970a0358b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2042.6666666666667,
+        "Y": 964.66666666666686
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Dictionary.ByKeysValues",
+        "Id": "532c9ad3954745c0b1a960626f01d8d3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2376.6666666666665,
+        "Y": 1256.666666666667
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e81f2f01066b4ac982550af4aa57cbd3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2019.3333333333335,
+        "Y": 1234.6666666666665
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "61b142b6c0454b75ae455892e8335f22",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2016.6666666666667,
+        "Y": 1114.6666666666665
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "CellComplex.ByCells",
+        "Id": "244d330652ac40f6a5f9a9a054d7f626",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2117.3333333333339,
+        "Y": 736.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.SetDictionaries",
+        "Id": "0f3d7597bea94244a4c2cd3144c0c9fd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2618.666666666667,
+        "Y": 810.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Cell.Type",
+        "Id": "4ca7d729e0304554b3285642105b0e80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2440.0000000000005,
+        "Y": 1005.9999999999995
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Cells",
+        "Id": "923ee9f340fa483ca2895ea769821d98",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4468.0,
+        "Y": 1097.333333333333
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Dictionary",
+        "Id": "ef0aab251cb74636a51884ac06c40977",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4754.0,
+        "Y": 1175.9999999999998
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Edges",
+        "Id": "d659d4afb24c44d7a87ffccf9808e778",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2827.3333333333335,
+        "Y": 608.66666666666663
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "20f6eee670f240819a49dd0da869f295",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3080.0000000000005,
+        "Y": 348.666666666667
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a0add83f424148fe83f186530ad37454",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3304.6666666666606,
+        "Y": 458.00000000000045
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Dictionary.ByKeysValues",
+        "Id": "4818a904a19f4fe5ab43b9805368335c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3718.0000000000009,
+        "Y": 470.00000000000034
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "*",
+        "Id": "d73a86ed8e1e4d5f98ede13184b99dcb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3536.6666666666661,
+        "Y": 629.33333333333326
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e5a70b3a7fe74ebba11ca5aa6b3d63c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3308.0,
+        "Y": 674.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Centroid",
+        "Id": "374c67f259d64958a4a07f6a4244efb9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3486.0000000000005,
+        "Y": 781.33333333333314
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.SetDictionaries",
+        "Id": "0fe85ed10157451aa8963b8fe2f7cc68",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4040.0,
+        "Y": 842.66666666666652
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Edge.Type",
+        "Id": "8f7c752c688d43f49d7872c6da1ba904",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3738.6666666666674,
+        "Y": 1088.6666666666665
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Edges",
+        "Id": "52a4062ecdfa455480d3c5d30d52c87e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4431.3333333333339,
+        "Y": 717.99999999999989
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Dictionary",
+        "Id": "3032ced48f434c92b966584cd808ebdf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4726.6666666666679,
+        "Y": 739.33333333333326
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "fb646db07f41417abeb47731206908b1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4726.0,
+        "Y": 1652.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Edges",
+        "Id": "983f00d67e9343b38d7269468d194c3f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 4931.333333333333,
+        "Y": 1655.3333333333333
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Dictionary",
+        "Id": "a866f8277d9b483587e12d44b8cdcae8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5187.9467108288673,
+        "Y": 1855.4903429311103
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Dictionary.ValueAtKey",
+        "Id": "0798af877178451cb7e3c5c406fd1479",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5198.666666666667,
+        "Y": 826.66666666666674
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "411b5d9c567b41689c23a0123b86b3ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5041.3333333333339,
+        "Y": 992.66666666666674
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "==",
+        "Id": "72d58cf0d745451e89000aacb04e37db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5509.3333333333339,
+        "Y": 1097.3333333333335
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "811b30da3e5d44b384d712c25e0a93f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5185.0767375819651,
+        "Y": 1385.5874057614371
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FilterByBoolMask",
+        "Id": "b639a3320a2b462bbd6951f9ec55e9b5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5636.0000000000009,
+        "Y": 718.666666666667
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "eb647a51b1d44df294a3134c45acb712",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5912.0000000000009,
+        "Y": 864.666666666667
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Topology.Geometry",
+        "Id": "224968c9a2c74e73ab185646463e3ece",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6015.9999999999991,
+        "Y": 659.33333333333371
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Geometry.Translate",
+        "Id": "34c5350b7ed942e29d4c36d8ad0dc9d2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6380.6666666666652,
+        "Y": 822.00000000000023
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e0c64071bffe4adc9aa86f4e2a8c3f6a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6241.0,
+        "Y": 946.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4ed5870aaa3e47a099b02afd7a76e3b0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5711.7777176986519,
+        "Y": 2048.2044388011172
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Dictionary.ValueAtKey",
+        "Id": "b83dd019651347369ba97cf61c4f86dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5869.1110510319913,
+        "Y": 1882.204438801117
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "==",
+        "Id": "5c2fa97dea3549fdafef081ac140888e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6179.7777176986519,
+        "Y": 2152.87110546778
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FilterByBoolMask",
+        "Id": "4d8a5ef910794614bf61957bbbd48bfb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6306.4443843653216,
+        "Y": 1774.204438801117
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "6def3e54637640ba9ed092190957131c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6735.2327061243277,
+        "Y": 2004.8690667748292
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Topology.Geometry",
+        "Id": "9d348c0880e14c489a50bcdc209f2ef9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 6660.5674813566693,
+        "Y": 1720.7264058534633
+      }
+    ],
+    "Annotations": [],
+    "X": -2019.0287317786051,
+    "Y": -215.00061035412944,
+    "Zoom": 0.4810687322994972
+  }
+}
