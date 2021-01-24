@@ -1,0 +1,15 @@
+ToDo:
+
+Make a txt with contract addreesses on ropsten and Rinkby
+Include, contract abi and code?
+
+read with web3.py frrom the contract
+write from web3.py TO the contract-(incrase gas price and wei number)
+move an ERC20 Token from one address to another in a contract?
+
+Research:
+How can a contract own tokens? Can we have a token own a contract, which own tokens?
+
+Design diagrams for template smart contracts,
+for example simple dbim contract , simple escrow contract,
+simple tokenisation contract, simple digital twin contract.
