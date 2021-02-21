@@ -2,7 +2,10 @@
 
 pragma solidity ^0.6.2;
 
+//05/-2-2020-re0factor the code for building components- to be used in a topology design process. 
+//do so in a new contract.
 //for @Arlav on Sunday: Circuit Breaker pattern, comments per spec, tests!
+
 
 ///@title:buildingToken marketplace
 ///@author: Arlav
