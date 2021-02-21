@@ -1,0 +1,7 @@
+contract_address = "0x829579c781ED147df4d788D0cD7d611113b9F106";
+wallet_private_key = "xxxxxxxxxxx";
+wallet_address = "0xEBE7e47e89129382D0837F067Ed51D318c891307";
+infura_url = "https://ropsten.infura.io/v3/029c7ec526724b59b345469899f0dd9e";
+path = "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages";
+message = "greetings from archchain";
+number = 88817;
