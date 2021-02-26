@@ -3,13 +3,38 @@ ToDo:
 Make a txt with contract addreesses on ropsten and Rinkby
 Include, contract abi and code?
 
-read with web3.py frrom the contract
-write from web3.py TO the contract-(incrase gas price and wei number)
+read with web3.py from the contract
+write from web3.py TO the contract-(increase gas price and wei number)
 move an ERC20 Token from one address to another in a contract?
+
+Code:
+Use Python to write to IPFS
+1.Add web3.py code to write a Blender file to IPFS
+2.create a token using that Blender file.
+
+set up a Blender -  Anaconda Environment to write to the BLockchain
+Set up an anaconda environment on OSX
+Set up an anaconda environment on Linux
+
+
+
+import web3.py into blender on Windows and OSX
+Sverchok Nodes for Web3.py
+
+send Wassim credentials, addresses and the dynamo definition.
+
+
+CPython on Grasshopper - what kind of plugin -
+
+
+
 
 Research:
 How can a contract own tokens? Can we have a token own a contract, which own tokens?
 
 Design diagrams for template smart contracts,
-for example simple dbim contract , simple escrow contract,
-simple tokenisation contract, simple digital twin contract.
+for example
+simple dbim contract ,
+simple escrow contract,
+simple tokenisation contract,
+simple digital twin contract.

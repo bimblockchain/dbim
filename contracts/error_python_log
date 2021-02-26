@@ -1,0 +1,12 @@
+Warning: TypeError : __init__() missing 2 required positional arguments:
+ 'doc' and 'pos' ['  File "<string>", line 21, in <module>\n',
+ '  File "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages\\web3\\eth.py",
+ line 539, in contract\n    ContractFactory = ContractFactoryClass.factory(self.web3, **kwargs)\n',
+ '  File "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages\\web3\\contract.py",
+ line 360, in factory\n    contract = cast(Contract, PropertyCheckingFactory(\n',
+ '  File "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages\\web3\\_utils\\datatypes.py",
+ line 54, in __new__\n    processed_namespace = apply_formatters_to_dict(\n', '
+ File "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages\\eth_utils\\functional.py",
+  line 45, in inner\n    return callback(fn(*args, **kwargs))\n', '
+  File "C:\\Users\\arlav\\anaconda3\\envs\\dynamo383\\lib\\site-packages\\eth_utils\\applicators.py",
+   line 86, in apply_formatters_to_dict\n    raise type(exc)(\n']
