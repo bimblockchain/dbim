@@ -4,7 +4,6 @@ pragma solidity ^0.6.2;
 
 //05/-2-2020-re0factor the code for building components- to be used in a topology design process.
 //do so in a new contract.
-//for @Arlav on Sunday: Circuit Breaker pattern, comments per spec, tests!
 
 
 ///@title:buildingToken marketplace
@@ -16,14 +15,14 @@ pragma solidity ^0.6.2;
 /** @dev: simple impleementation of an ERC721 token marketplace,
  * with the addition of a circuit breaker desisgn and pullpayment & escrow accounts
  * to prevent reentrancy attacks. Pausable is used to pause all functions by the owner
- * as a circuit breaker pattern. Safe Math is used for uint256 to preveent overflows
+ * as a circuit breaker pattern. Safe Math is used for uint256 to prevent overflows
  * Addresses on ethereum can upload buildingwork which is tokenised into ERC721 when sold.
  * @notice: you can use this as a simple buildingToken marketplace for images or other digital buildingefacts
 */
 
 //be careful wich veersion of OpenZeppelin contracts you arer using,
 //it is best ot use a specific previous version or the constant upgrades will break things
-//currently using release-v3.1.0 of the conracts which uses solidity 0.6.0 compiler.
+//currently using release-v3.1.0 of the contracts which uses solidity 0.6.0 compiler.
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/token/ERC721/ERC721.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/access/Ownable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/payment/PullPayment.sol";
@@ -51,7 +50,7 @@ using SafeMath for uint256;
   }
 
 
-  constructor() ERC721("buildingToken", "building") Pausable () public {
+  constructor() ERC721("buildingToken", "BLD") Pausable () public {
 
   }
 
@@ -79,9 +78,11 @@ using SafeMath for uint256;
   }
 
 //@notice: executes a purchase of an item, after a check that the item exists.
-//@param: checks that the price is value offered is highr than the price.
+//@notice: we need to implement a contract that facilitates collaborative transfer and management (say from a DAO)
+//@param: checks that the price is value offered is higher than the price.
 //@return: advances the item id, mints the actual ERC721 token connected with the buildingwork, assigns to the seller.
-//@return: sets the IPFS URI and transfers the
+//@return: sets the IPFS URI and transfers the ERC721 token
+
 
   function purchasebuildingItem(uint256 buildingItemid) whenNotPaused external payable buildingItemExist(buildingItemid) {
     buildingItem storage buildingItem = _buildingItems[buildingItemid];

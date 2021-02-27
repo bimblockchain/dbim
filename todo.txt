@@ -8,9 +8,16 @@ write from web3.py TO the contract-(increase gas price and wei number)
 move an ERC20 Token from one address to another in a contract?
 
 Code:
-Use Python to write to IPFS
+
+
 1.Add web3.py code to write a Blender file to IPFS
 2.create a token using that Blender file.
+
+Use Python to write a file to IPFS
+Take that hash and feed it into a python script that mints a token to the BLockchain
+Use Python to Write the interface  code for the buildingcomponent.
+Test the creation of a NFT through python
+
 
 set up a Blender -  Anaconda Environment to write to the BLockchain
 Set up an anaconda environment on OSX
