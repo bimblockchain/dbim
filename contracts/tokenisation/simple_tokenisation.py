@@ -10,16 +10,42 @@ contract_abi =
 smartContract = w3.eth.contract(address=contract_address, abi=contract_abi)
 
 
-#the next transaction builds the trransaction for minting a component token- by using the mintComponent function-
+#the next transaction builds the trransaction for adding a component token- by using the addBuildingItem function-
 #question: how to trigger the struct function?
 receipts = []
 nonce = w3.eth.getTransactionCount(wallet_address)
-tx_dict = smartContract.functions.mintComponent(message).buildTransaction({
+tx_dict = smartContract.functions.addbuildingItem(message).buildTransaction({
     'chainId' : 3,
     'gas' : 210000,
     'gasPrice' : w3.toWei('50', 'gwei'),
     'nonce' : nonce,
 })
+
+#the next transaction builds the transaction for retrieving the information for a component token- by using the getbuildignItem function-
+#question: how to trigger the struct function?
+receipts = []
+nonce = w3.eth.getTransactionCount(wallet_address)
+tx_dict = smartContract.functions.getbuildingItem(message).buildTransaction({
+    'chainId' : 3,
+    'gas' : 210000,
+    'gasPrice' : w3.toWei('50', 'gwei'),
+    'nonce' : nonce,
+})
+
+#the next transaction builds the transaction for purchasing a buildingItem token- by using the purchasebuildingItem function-
+#question: how to trigger the struct function?
+receipts = []
+nonce = w3.eth.getTransactionCount(wallet_address)
+tx_dict = smartContract.functions.purchasebuildingItem(message).buildTransaction({
+    'chainId' : 3,
+    'gas' : 210000,
+    'gasPrice' : w3.toWei('50', 'gwei'),
+    'nonce' : nonce,
+})
+
+
+
+
 
 #the next attempts to send, and issue a receipt for the transaction.
 signed_tx = w3.eth.account.sign_transaction(tx_dict, wallet_private_key)
