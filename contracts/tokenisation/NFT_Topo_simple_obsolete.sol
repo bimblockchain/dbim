@@ -20,9 +20,10 @@ pragma solidity ^0.6.2;
  * @notice: you can use this as a simple buildingToken marketplace for images or other digital buildingefacts
 */
 
-//be careful wich veersion of OpenZeppelin contracts you arer using,
-//it is best ot use a specific previous version or the constant upgrades will break things
-//currently using release-v3.1.0 of the contracts which uses solidity 0.6.0 compiler.
+/**@dev: be careful which version of OpenZeppelin contracts you are using,
+  *it is best ot use a specific previous version or the constant upgrades will break things
+  *currently using release-v3.1.0 of the contracts which uses the solidity 0.6.0 compiler.
+  */
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/token/ERC721/ERC721.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/access/Ownable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/payment/PullPayment.sol";
@@ -41,7 +42,7 @@ using SafeMath for uint256;
   mapping (uint256 => buildingItem) private _buildingItems;
 
 
-///@dev: creating the buildingItem as a struct, toeknURI is the IPFS URI
+///@dev: creating the buildingItem as a struct, tokenURI is the IPFS URI
   struct buildingItem {
     address seller;
     uint256 price;
