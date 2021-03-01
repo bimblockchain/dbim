@@ -1,4 +1,5 @@
 import ipfsapi
+#test this on Linux
 if __name__ == '__main__':
 # Connect to local node
     try:
