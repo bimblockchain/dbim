@@ -27,6 +27,9 @@ using SafeMath for uint256;
 
   //@dev: creating the componentItem as a struct, tokenURI is the IPFS URI, topologic is a string that takes the components IDs from Topologic
   //@dev: the stuct and constructo arre probably fine, it is the rest of the functions that all need rehauling.
+  //@dev: perhaps Topologic nomenclaturee can take a mapping:
+  // 1: vertex, edge, face, cell, cellcomplex, shell, Wire
+  // 1:aperture, 2:cell, 3:CellComplex, 4: Cluster, 5:Context
 
     struct componentItem {
       address seller;
