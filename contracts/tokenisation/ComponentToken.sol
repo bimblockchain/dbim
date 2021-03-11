@@ -20,7 +20,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1
 contract ComponentToken is ERC721, Ownable, PullPayment, Pausable {
 
 //@dev: keep this
-//rehaul the code for Solidity 0.8.0
+//rehaul the code for Solidity 0.8.0 - for example safe math will no tlonger be needed
 using SafeMath for uint256;
   uint256 public _tokenIds;
   uint256 public _componentItemIds;
