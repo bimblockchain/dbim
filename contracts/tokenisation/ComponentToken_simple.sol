@@ -28,55 +28,13 @@ using SafeMath for uint256;
 
   //@dev: creating the componentItem as a struct, tokenURI is the IPFS URI, choice is a string that takes the components IDs from choice
   //@dev: the stuct and constructo arre probably fine, it is the rest of the functions that all need rehauling.
-  //@dev: perhaps choice nomenclaturee can take a mapping:
-  // 8:Cluster, 7:CellComplex, 6:Cell, 5:Shell, 4:Face, 3:Wire, 2:Edge, and 1:Vertex.
-
-  enum Topology {Cluster, Cellcomplex, Cell, Shell, Face, Wire, Edge } //Enum
-  Topology choice;
-  Topology constant defaultChoice = Topology.Cluster;
-
-  function setCluster() public {
-      choice = Topology.Cluster;
-  }
-
-  function setCellcomplex() public {
-      choice = Topology.Cellcomplex;
-  }
-
-  function setCell() public {
-      choice = Topology.Cell;
-  }
-
-  function setShell() public {
-      choice = Topology.Shell;
-  }
-
-  function setFace() public {
-      choice = Topology.Face;
-  }
-
-  function setWire() public {
-      choice = Topology.Wire;
-  }
-
-  function setEdge() public {
-      choice = Topology.Edge;
-  }
-
-
-  function getChoice() public view returns (Topology) {
-      return choice;
-  }
-
-  function getDefaultChoice() public pure returns (uint) {
-      return uint(defaultChoice);
-  }
 
 
     struct componentItem {
       address seller;
       uint256 price;
       string tokenURI;
+      string BrepURI;
       bool exists;
     }
 
@@ -103,7 +61,7 @@ using SafeMath for uint256;
 
       //@notice: retrieves an componentIten
       //@return: id, the price, and the IPFS token URI
-        function getcomponentItem(uint256 id) whenNotPaused public view componentItemExist(id) returns(uint256,uint256, string memory){
+        function getcomponentItem(uint256 id) whenNotPaused public view componentItemExist(id) returns(uint256,uint256, string memory, string memory){
           componentItem memory componentItem = _componentItems[id];
           return (id, componentItem.price, componentItem.tokenURI);
         }
