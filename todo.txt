@@ -47,7 +47,7 @@ Do all of this through PYTHON interfacing with Solidity.
 
 transaction receipts.
 
-
+re-set MACOS so IPFS can work? 
 When you have python to IPFS working develop it into a Sverchok node so that you can tokenise Blender files themselves,
 
 
