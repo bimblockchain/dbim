@@ -1,5 +1,6 @@
 
 #@dev: code still needs refactoring for minting. Currently it is connected with Topologic
+#@dev: try passing a simple string for the minting.
 #refer to credentials.MD for public test ethereum addresses
 contract_address = "0x41b101e30124ff0f6ee8c091e00178d87eb3b4c5"
 wallet_private_key = "2366b847b1452a873139138443b88957f084e4add05f00d3074497ed404db0d0"
