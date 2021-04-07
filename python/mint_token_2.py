@@ -1,6 +1,6 @@
 
 
-#refer to credentials.MD for public test ethereum addrsses
+#refer to credentials.MD for public test ethereum addresses
 #double check that this is my infura.
 #double check that all addresses are written with capitals so they CheckSum
 
