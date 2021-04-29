@@ -1,0 +1,99 @@
+Step 1 - Publish your .Net Core application
+ 
+First, create a .Net core application on VS; you can make an MVC project or Web API project and if you already have an existing project, then open it.
+
+    Right Click on your project
+    Click on publish
+    Now create a new publish profile, and browse the folder where you want to publish your project dll
+    Click on publish so it will create your dll in the folder
+
+Step 2 - Install required .Net Module on Linux
+ 
+Now we have our web application dll and now we need to host it on the Linux environment. First, we need to understand how the deployment works in Linux. .Net applications run on Kestrel servers and we run Apache or Nginx server in Linux environments, which acts as a proxy server and handles the traffic from outside the machine and redirects it to the Kestrel server so we will have Apache or Nginx server as the middle layer.
+ 
+In this article, we will use Apache as a proxy server.
+ 
+First, we need to install the .Net core module in our Linux environment. For that run the following commands,
+
+    sudo apt-get update
+    sudo apt-get install apt-transport-https
+    sudo apt-get update
+    sudo apt-get install dotnet-sdk-3.1
+    sudo apt-get install dotnet-runtime-3.1
+    sudo apt-get install aspnetcore-runtime-3.1
+
+Step 3 - Install and configure Apache Server
+ 
+So now we have all the required .Net packages. I have installed an additional package so if you are running a different project it will help.
+ 
+Now install the Apache server,
+
+    sudo apt-get install apache2
+    sudo a2enmod proxy proxy_http proxy_html proxy_wstunnel
+    sudo a2enmod rewrite
+
+Now we need to make a conf file to set up our proxy on Apache. Create the following file:
+
+    sudo nano /etc/apache2/conf-enabled/netcore.conf
+
+Now copy the following configuration in that file,
+
+    <VirtualHost *:80>  
+       ServerName www.DOMAIN.COM  
+       ProxyPreserveHost On  
+       ProxyPass / http://127.0.0.1:5000/  
+       ProxyPassReverse / http://127.0.0.1:5000/  
+       RewriteEngine on  
+       RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC]  
+       RewriteCond %{HTTP:CONNECTION} Upgrade$ [NC]  
+       RewriteRule /(.*) ws://127.0.0.1:5000/$1 [P]  
+       ErrorLog /var/log/apache2/netcore-error.log  
+       CustomLog /var/log/apache2/netcore-access.log common  
+    </VirtualHost>  
+
+<VirtualHost *:80>
+ 
+This tag defines the IP and port it will bind Apache so we will access our application from outside our Linux environment through this Ip:Port.
+ 
+Now restart the Apache server,
+
+    sudo service apache2 restart
+    sudo apachectl configtest
+
+Step 4 - Configure and Start Service 
+ 
+Move your dll to the defined path with the below command.
+
+"sudo cp -a ~/release/ /var/netcore/" 
+Create a service file for our .Net application
+ 
+"sudo nano /etc/systemd/system/ServiceFile.service"
+ 
+Copy the following configuration in that file and  it will run our application,
+
+    [Unit]  
+    Description=ASP .NET Web Application  
+    [Service]  
+    WorkingDirectory=/var/netcore  
+    ExecStart=/usr/bin/dotnet /var/netcore/Application.dll  
+    Restart=always  
+    RestartSec=10  
+    SyslogIdentifier=netcore-demo  
+    User=www-data  
+    Environment=ASPNETCORE_ENVIRONMENT=Production  
+    [Install]  
+    WantedBy=multi-user.target  
+
+ExecStart=/usr/bin/dotnet /var/netcore/Application.dll in this line replace Application.dll with your dll name that you want to run.
+ 
+Now start the service. Instead of the service name in the below commands use the name of the file made above,
+
+    sudo systemctl enable {Service Name}
+    sudo systemctl start {Service Name}
+
+Now your proxy server and kestrel server is running and you can access your application through any ip with port 80.
+ 
+To redeploy the code your need to replace the dll and stop and start your service again through the following commands
+
+    sudo systemctl stop {Service Name}
+    sudo systemctl start {Service Name}
