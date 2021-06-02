@@ -1,12 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+//@dev: use these openzeppelin libraries for deployment with a local framework
 import "./@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "./@openzeppelin/contracts/token/ERC20/extensions/ERC20Snapshot.sol";
 import "./@openzeppelin/contracts/access/AccessControl.sol";
 import "./@openzeppelin/contracts/security/Pausable.sol";
 import "./@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
+
+
+//@dev: use these openzeppelin libraries for deployment with remix.ethereum.org
+
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/token/ERC20/ERC20.sol";
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/token/ERC20/extensions/ERC20Snapshot.sol";
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/access/AccessControl.sol";
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/security/Pausable.sol";
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
+
 
 contract CollectiveDigitalFactory is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable, ERC20Permit {
     bytes32 public constant SNAPSHOT_ROLE = keccak256("SNAPSHOT_ROLE");
