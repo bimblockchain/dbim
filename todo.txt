@@ -47,7 +47,7 @@ Do all of this through PYTHON interfacing with Solidity.
 
 transaction receipts.
 
-re-set MACOS so IPFS can work? 
+re-set MACOS so IPFS can work?
 When you have python to IPFS working develop it into a Sverchok node so that you can tokenise Blender files themselves,
 
 
@@ -75,7 +75,6 @@ Set up an anaconda environment on Linux
 import web3.py into blender on Windows and OSX
 Sverchok Nodes for Web3.py
 
-send Wassim credentials, addresses and the dynamo definition.
 
 
 CPython on Grasshopper - what kind of plugin -
@@ -90,5 +89,10 @@ Design diagrams for template smart contracts,
 for example
 simple dbim contract ,
 simple escrow contract,
-simple tokenisation contract,
+simple ERC20 contract,
+simple ERC721 contract,
+simple ERC115 contract,
 simple digital twin contract.
+
+material passports:
+I would like to experiment with two nodes that we have not used thus far (Topology.DecodeInformation and Toplogy.EncodeInformation). These write out (to an excel CSV file) and read back in all the dictionaries (keys and values) of a topology and its sub-topologies and re-construct those dictionaries and assign them to the correct (sub)components. if we can save the JSON of a sverchok definition, the various BREP strings and their associated CSV files to IPFS and hash the location to the contract and read it back in and reconstruct the topologies along with their dictionaries, wouldn't we  have a really good material passport system? What would be missing?
