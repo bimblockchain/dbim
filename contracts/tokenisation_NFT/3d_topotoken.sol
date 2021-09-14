@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
 
+//upgrade this to 0.8.0 and update the openzeppelin contracts.
 //deployed on ropsten with ArchChainONE account: 0x3e65E95E32D3414FDBBCd4ed0753EfdA6980F2Ce
 
 //@dev: sets up OpenZeppelin lirbaries needed for an NFT

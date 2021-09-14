@@ -1,11 +1,15 @@
 ToDo:
 
-Make a txt with contract addreesses on ropsten and Rinkby
-Include, contract abi and code?
+done Make a txt with contract Addresses on ropsten and Rinkby
+done Include, contract abi and code?
 
-read with web3.py from the contract
-write from web3.py TO the contract-(increase gas price and wei number)
-move an ERC20 Token from one address to another in a contract?
+done read with web3.py from the contract
+done write from web3.py TO the contract-(increase gas price and wei number)
+
+- move an ERC20 Token from one address to another in a contract?
+  * scale to th stigmergic coordination and to ERC20 staking.
+
+  
 
 Code:
 
@@ -64,11 +68,7 @@ Use Python to write a file to IPFS
 Take that hash and feed it into a python script that mints a token to the BLockchain
 Use Python to Write the interface  code for the buildingcomponent.
 Test the creation of a NFT through python
-
-
-set up a Blender -  Anaconda Environment to write to the BLockchain
-Set up an anaconda environment on OSX
-Set up an anaconda environment on Linux
+Create a simple React page that keeps track of a Topologic Model.
 
 
 
