@@ -32,17 +32,31 @@ that
     The string uniquely declares the Locations
 
     * Generate strings for other components :: columns, slabs, etc - can these be mapped to IFC?
-    * can these be used as an ontology?
+    * can these be used as an ontology
+
+Set up a python virtual environment with py 3.9
+activate it the environments
+Pip install web3
+Pip install Ipfshttpsclient
+go to the site pachages of the virtual environment, then pick up web3 & IPFS packages
+then copy to the site pakcages to topologic
+and then restart blender.
+
+
+Standard tutorial on metamask - using the contracts and
+
+
+import JSON-
+
 
     Process:
 
 1. On smart contact keeps track of files "file_ledger" - a second smart contract keeps track of NFTs "topology_ledger"
 
-set up separate python scripts: 
 
-  One that sends the topology file to IPFS and retrieves a Hash - This is the master hash for the whole building.
+  * One that sends the whole topology file to IPFS and retrieves a Hash - This is the master hash for the whole building.
 
-The topologic-setup needs to build a set of components.
+* The topologic-setup needs to build a set of components.
 -What kind of dictionaries should we attach to components ? Material IDs, Process ID, Output IDs?
 
 Each component information is first sent to IPFS, where the metadata for the token are created, then Each component is then sent through a python node to be minted as an NFt token and to IPFS.
