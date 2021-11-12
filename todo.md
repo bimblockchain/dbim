@@ -9,7 +9,7 @@ done write from web3.py TO the contract-(increase gas price and wei number)
 - move an ERC20 Token from one address to another in a contract?
   * scale to th stigmergic coordination and to ERC20 staking.
 
-  
+
 
 Code:
 
@@ -30,14 +30,30 @@ that
     unique IDs for columns, and beams and faces. Topologic generates a string that contains the topology _tokenIds
     Sample for a vertex is: string: ( "CASCADE Topology V1, (c) Matra-Datavision Locations 0 Curve2ds 0 Curves 0 Polygon3D 0 PolygonOnTriangulations 0 Surfaces 0 Triangulations 0 TShapes 1 Ve 1e-07 10 20 30 0 0 0101101 * +1 0 ")
     The string uniquely declares the Locations
-1. On smart contact keeps track of files "file_ledger" - a second smart contract keeps track of NFTs "topology_ledger"
-  set up separate python scripts: one that sends the topology file to IPFS and retrieves a Hash (target for 19th March)
-    a second that sends this hash to the "file_ledger" (do we need this to be a token?)
-    a third python script, triggered from inside the software that sends a topology string to the "topology_ledger"
-    a fourth python script that reads from "topology_ledger"
-      a fifth python script that does transfer of tokens ?
 
-2. Mint a token on "Topology Ledger"
+    * Generate strings for other components :: columns, slabs, etc - can these be mapped to IFC?
+    * can these be used as an ontology?
+
+    Process:
+
+1. On smart contact keeps track of files "file_ledger" - a second smart contract keeps track of NFTs "topology_ledger"
+
+set up separate python scripts: 
+
+  One that sends the topology file to IPFS and retrieves a Hash - This is the master hash for the whole building.
+
+The topologic-setup needs to build a set of components.
+-What kind of dictionaries should we attach to components ? Material IDs, Process ID, Output IDs?
+
+Each component information is first sent to IPFS, where the metadata for the token are created, then Each component is then sent through a python node to be minted as an NFt token and to IPFS.
+We then test-read the components and re-assemble the building, to test that
+
+
+ triggered from inside the software that sends a topology string to the "topology_ledger"
+  a fourth python script that reads from "topology_ledger"
+  a fifth python script that does transfer of tokens
+
+2. Mint a token on "Topology Ledger" -DONE
 3. transfer it to another address
 
 Send the unique IDs for the columns to the smart contract and trigger the creation of an NFT for the first column.
