@@ -15,3 +15,12 @@ the contracts provide:
 
 We are slowly building a series of templates for use in **decentralised building information modelling**.
 Our Tools for Blender can also be used to drive any creative and design project that needs a blockchain for project management.
+
+* Model for on-Chain NFT of BIM and of topologic models:
+  - encode .ifc on base64
+  - save it as an NFT : here the mint function should save the tokenURI onchain
+  - you then have an .ifc definition and a topologic definition on chain.
+  - create then the rendering engine to render this on the web browser by using IFC.js
+  - create a dashboard then of abstract generalisation to render the circular economy between retrieving materials from one building to another.
+
+  
