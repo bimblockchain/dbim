@@ -20,7 +20,6 @@ Our Tools for Blender can also be used to drive any creative and design project 
   - encode .ifc on base64
   - save it as an NFT : here the mint function should save the tokenURI onchain
   - you then have an .ifc definition and a topologic definition on chain.
+  - The Topologic NFT shoudl also contain the topology and IDs of the other NFTs.
   - create then the rendering engine to render this on the web browser by using IFC.js
   - create a dashboard then of abstract generalisation to render the circular economy between retrieving materials from one building to another.
-
-  
